@@ -46,7 +46,7 @@ class App extends Component {
                 this.setState({topscore: this.state.score + 1});
             }
 
-            if (this.state.score == 11) {
+            if (this.state.score === 11) {
                 // resets game
                 this.setState({
                     clicked: [],
