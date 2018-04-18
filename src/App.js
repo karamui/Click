@@ -46,11 +46,21 @@ class App extends Component {
                 this.setState({topscore: this.state.score + 1});
             }
 
-            // updates score and message
-            this.setState({
-                score: this.state.score + 1, 
-                message: "Ooh, you have clicked a new corgi!"
-            });
+            if (this.state.score == 11) {
+                // resets game
+                this.setState({
+                    clicked: [],
+                    score: 12, 
+                    topscore: 12,
+                    message: "Congratulations! You clicked all of the corgis!"
+                });
+            } else {
+                // updates score and message
+                this.setState({
+                    score: this.state.score + 1, 
+                    message: "Ooh, you have clicked a new corgi!"
+                });
+            }
 
             // shuffles the array of corgis
             this.shuffleArray(this.state.corgis);
